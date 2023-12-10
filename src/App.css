@@ -13,15 +13,27 @@
   }
 }
 
-.App-header {
+.topApp-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  margin-top: -200px;
 }
 
 .App-link {
@@ -35,4 +47,39 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.dropdowns-container {
+  display: flex;
+  justify-content: space-between; /* Positions groups at the ends */
+  padding: 0 20px; /* Add padding for spacing from screen edges */
+  width: 60%;
+  margin-top: -300px;
+}
+
+.dropdown-group {
+  display: flex;
+  flex-direction: row;
+  gap: 20px
+}
+
+.app-title {
+  margin-top: 20px; 
+  font-size: 2rem;
+}
+
+.centered-dropdown {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.footer {
+  flex: 1;
+  height: 10vh;
+  background-color: #6FC276;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
