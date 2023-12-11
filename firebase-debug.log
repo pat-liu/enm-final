@@ -1,0 +1,74 @@
+[debug] [2023-12-11T02:49:16.514Z] ----------------------------------------------------------------------
+[debug] [2023-12-11T02:49:16.515Z] Command:       /usr/local/bin/node /usr/local/bin/firebase login --reauth
+[debug] [2023-12-11T02:49:16.515Z] CLI Version:   11.20.0
+[debug] [2023-12-11T02:49:16.515Z] Platform:      darwin
+[debug] [2023-12-11T02:49:16.515Z] Node Version:  v16.13.2
+[debug] [2023-12-11T02:49:16.516Z] Time:          Sun Dec 10 2023 21:49:16 GMT-0500 (Eastern Standard Time)
+[debug] [2023-12-11T02:49:16.516Z] ----------------------------------------------------------------------
+[debug] 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=787606433&redirect_uri=http%3A%2F%2Flocalhost%3A9005&login_hint=liupat%40seas.upenn.edu
+[info] 
+[info] Waiting for authentication...
+[debug] [2023-12-11T02:49:20.613Z] ----------------------------------------------------------------------
+[debug] [2023-12-11T02:49:20.614Z] Command:       /usr/local/bin/node /usr/local/bin/firebase init
+[debug] [2023-12-11T02:49:20.614Z] CLI Version:   11.20.0
+[debug] [2023-12-11T02:49:20.614Z] Platform:      darwin
+[debug] [2023-12-11T02:49:20.614Z] Node Version:  v16.13.2
+[debug] [2023-12-11T02:49:20.615Z] Time:          Sun Dec 10 2023 21:49:20 GMT-0500 (Eastern Standard Time)
+[debug] [2023-12-11T02:49:20.615Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-12-11T02:49:20.617Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-12-11T02:49:20.617Z] > authorizing via signed-in user (liupat@seas.upenn.edu)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /Users/patrickliu/Desktop/enm-final
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[info] i  If you want to create a project in a Google Cloud organization or folder, please use "firebase projects:create" instead, and return to this command when you've created the project. 
+[debug] [2023-12-11T02:49:31.889Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects [none]
+[debug] [2023-12-11T02:49:31.889Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"projectId":"enmfinal","name":"enmfinal"}
+[debug] [2023-12-11T02:49:32.184Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects 400
+[debug] [2023-12-11T02:49:32.184Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"error":{"code":400,"message":"Cloud Resource Manager project creation is disabled. Contact your administrator to enable this setting in the Google Cloud Platform service in the Google Workspace Admin console. See https://support.google.com/a/answer/9197205 for more information.","status":"FAILED_PRECONDITION","details":[{"@type":"type.googleapis.com/google.rpc.PreconditionFailure","violations":[{"type":"SERVICE","description":"Cloud Resource Manager project creation is disabled. Contact your administrator to enable this setting in the Google Cloud Platform service in the Google Workspace Admin console. See https://support.google.com/a/answer/9197205 for more information."}]}]}}
+[debug] [2023-12-11T02:49:32.185Z] FirebaseError: HTTP Error: 400, Cloud Resource Manager project creation is disabled. Contact your administrator to enable this setting in the Google Cloud Platform service in the Google Workspace Admin console. See https://support.google.com/a/answer/9197205 for more information.
+    at responseToError (/usr/local/lib/node_modules/firebase-tools/lib/responseToError.js:49:12)
+    at RetryOperation._fn (/usr/local/lib/node_modules/firebase-tools/lib/apiv2.js:288:77)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[error] 
+[error] Error: Failed to create project. See firebase-debug.log for more info.
+[debug] [2023-12-11T21:02:01.301Z] ----------------------------------------------------------------------
+[debug] [2023-12-11T21:02:01.302Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2023-12-11T21:02:01.302Z] CLI Version:   11.20.0
+[debug] [2023-12-11T21:02:01.302Z] Platform:      darwin
+[debug] [2023-12-11T21:02:01.302Z] Node Version:  v16.13.2
+[debug] [2023-12-11T21:02:01.305Z] Time:          Mon Dec 11 2023 16:02:01 GMT-0500 (Eastern Standard Time)
+[debug] [2023-12-11T21:02:01.306Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-12-11T21:02:01.334Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-12-11T21:02:01.334Z] > authorizing via signed-in user (patliu1001@gmail.com)
+[debug] [2023-12-11T21:02:01.334Z] [iam] checking project enm-final for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-12-11T21:02:01.335Z] > refreshing access token with scopes: []
+[debug] [2023-12-11T21:02:01.336Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-12-11T21:02:01.336Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-12-11T21:02:01.544Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-12-11T21:02:01.544Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-12-11T21:02:01.556Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/enm-final:testIamPermissions [none]
+[debug] [2023-12-11T21:02:01.556Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/enm-final:testIamPermissions x-goog-quota-user=projects/enm-final
+[debug] [2023-12-11T21:02:01.556Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/enm-final:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-12-11T21:02:01.865Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/enm-final:testIamPermissions 200
+[debug] [2023-12-11T21:02:01.865Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/enm-final:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-12-11T21:02:01.866Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/enm-final [none]

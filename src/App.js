@@ -53,8 +53,8 @@ function App() {
     const char_b_winrate = playerCharMap.hasOwnProperty(player2Id) && playerCharMap[player2Id].hasOwnProperty(character2) ?
     playerCharMap[player2Id][character2] : defaultWinRate;
 
-    const player_a_total_games = playerGamesMap[player1Id];
-    const player_b_total_games = playerGamesMap[player2Id];
+    const player_a_winrate = playerGamesMap[player1Id] / 100;
+    const player_b_winrate = playerGamesMap[player2Id] / 100;
 
     const character_a_stage_winrate = characterStageMap.hasOwnProperty(character1) && characterStageMap[character1].hasOwnProperty(stage) ?
     characterStageMap[character1][stage] : defaultWinRate;
@@ -62,12 +62,17 @@ function App() {
     const character_b_stage_winrate = characterStageMap.hasOwnProperty(character2) && characterStageMap[character2].hasOwnProperty(stage) ?
     characterStageMap[character2][stage] : defaultWinRate;
 
-    const values = [char_a_winrate, char_b_winrate, player_a_total_games, player_b_total_games, character_a_stage_winrate, character_b_stage_winrate]
+    const values = [char_a_winrate, char_b_winrate, player_a_winrate, player_b_winrate, character_a_stage_winrate, character_b_stage_winrate]
     
     let dotProduct = 0;
     for (let i = 0; i < coefficients.length; i++) {
       dotProduct += coefficients[i] * values[i];
     }
+
+    console.log('[char_a_winrate, char_b_winrate, player_a_total_games, player_b_total_games, stage_char_a, stage_char_B')
+    console.log("coefficients: " + coefficients)
+    console.log("values: " + values)
+    console.log("dotProduct: " + dotProduct)
     
     // Calculate the probability of predicting 0
     const probability_0 = 1 / (1 + Math.exp(-dotProduct))
@@ -79,11 +84,11 @@ function App() {
     async function fetchData() {
       try {
 
-        const charactersResponse = await fetch('/characters.json');
+        const charactersResponse = await fetch('characters.json');
         const charactersData = await charactersResponse.json();
         setCharacters(charactersData);
 
-        const playerMapResponse = await fetch('/player_map.json');
+        const playerMapResponse = await fetch('player_map.json');
         const playerMapData = await playerMapResponse.json();
         const playerMapEntries = Object.entries(playerMapData);
 
@@ -94,15 +99,15 @@ function App() {
         const sortedPlayerMap = Object.fromEntries(playerMapEntries);
         setPlayerMap(sortedPlayerMap);
 
-        const playerCharMapResponse = await fetch('/player_char_map.json');
+        const playerCharMapResponse = await fetch('player_char_map.json');
         const playerCharMapData = await playerCharMapResponse.json();
         setPlayerCharMap(playerCharMapData);
 
-        const playerGamesMapResponse = await fetch('/player_games_map.json');
+        const playerGamesMapResponse = await fetch('player_wins_map.json');
         const playerGamesMapData = await playerGamesMapResponse.json();
         setPlayerGamesMap(playerGamesMapData);
 
-        const characterStageMapResponse = await fetch('/character_stage_map.json');
+        const characterStageMapResponse = await fetch('character_stage_map.json');
         const characterStageMapData = await characterStageMapResponse.json();
         console.log(characterStageMapData)
         setCharacterStageMap(characterStageMapData);
